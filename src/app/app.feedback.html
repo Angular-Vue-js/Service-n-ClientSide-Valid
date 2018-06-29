@@ -1,0 +1,8 @@
+ <!-- Submit feedback -->
+ Your Email Address: <br/>
+ <input [(ngModel)]="emailAddress"><br/>
+ <p class="validation">{{validateEmail}}</p>
+ Feedback:<br/>  
+ <textarea [(ngModel)]="feedbackMsg"></textarea><br/>
+ <p class="validation">{{validateFeedback}}</p>
+ <button (click)="postFeedback()">Send</button>

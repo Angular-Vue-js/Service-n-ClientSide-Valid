@@ -1,0 +1,23 @@
+ <!-- Show result from Post -->
+
+ <div *ngIf="feedbackResponseMsg">{{feedbackResponseMsg}}<br/>
+    {{feedbackResponseStatus}}</div>
+    <br/>
+    <span>Convert Celsius to Fahrenheit</span>
+    <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$" required 
+         [(ngModel)]="inputF" name="myFData" #myFData="ngModel" >
+        <div class="validation" [hidden]="myFData.valid || myFData.pristine" *ngIf="myFData?.errors?.pattern">
+            Please enter a number.</div>
+    
+    <button (click)="convertToF()">Get Fahrenheit</button><br/>
+    <p [hidden]="(!outputF) || (!myFData.valid)">{{lastInputF}} Degrees Celsius is {{outputF}} Degrees Fahrenheit.</p>
+
+
+    <span>Convert Celsius to Fahrenheit</span>
+    <input type="text" pattern="^[+-]*[0-9]*[\.]?[0-9]*$" required 
+    [(ngModel)]="inputC" name="myCData" #myCData="ngModel" >
+   <div class="validation" [hidden]="myCData.valid || myCData.pristine" *ngIf="myCData?.errors?.pattern">
+       Please enter a number.</div>
+   
+    <button (click)="convertToC()">Get Celsius</button><br/>
+    <p [hidden]="(!outputC) || (!myCData.valid)">{{lastInputC}} Degrees Fahrenheit is {{outputC}} Degrees Celsius.</p>
